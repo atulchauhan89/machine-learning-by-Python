@@ -32,4 +32,12 @@ regressor = LinearRegression()
 regressor.fit(X_train,Y_train)
 
 # Predict test set results
+Y_pred=regressor.predict(X_test)
 
+# Building optimal model with backward Eliminationi
+
+import statsmodels.formula.api as sm
+# Create a array of 1s in the X data to use 
+X= np.append(arr=np.ones((50,1)).astype(int), values=X ,axis=1)
+
+X_optimum=X[:, [0,1,2,3,4,5]]
